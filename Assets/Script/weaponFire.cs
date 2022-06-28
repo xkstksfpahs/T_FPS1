@@ -190,8 +190,8 @@ public class weaponFire : MonoBehaviour
     private void TrackingShoot()
     {
         GameObject bullet = Instantiate(bulletFac);
-        bullet.transform.position = srFirePos.transform.position;
-        bullet.transform.rotation = srFirePos.transform.rotation;
+        bullet.transform.position = ars.firePos.transform.position;
+        bullet.transform.rotation = ars.firePos.transform.rotation;
         arFireDelay = TFD;
         gunPlayer.PlayOneShot(gunSound);
     }

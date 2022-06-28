@@ -10,6 +10,8 @@ public class Aim : MonoBehaviour
     float maxDistabce = 50f;
     public Vector3 obj;
     [SerializeField] GameObject rp;
+
+    int layerMask = (-1) - (1 << LayerMask.NameToLayer("Bullet"));
     // Start is called before the first frame update
     void Start()
     {

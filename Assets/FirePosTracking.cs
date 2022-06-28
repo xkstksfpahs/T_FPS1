@@ -24,11 +24,11 @@ public class FirePosTracking : MonoBehaviour
     void Tracking()
     {
         Vector3 oPos = transform.position;
-        xx = (aim.dx - oPos.x)+0.1f;
-        yy = (aim.dy - oPos.y)+0.05f;
+        xx = (aim.dx - oPos.x)/*+0.1f*/;
+        yy = (aim.dy - oPos.y)/*+0.05f*/;
         zz = (aim.dz - oPos.z);
         Vector3 dir = new Vector3(xx, yy, zz);
-        //dir = dir.normalized;
+        dir = dir.normalized;
 
         Vector3 rotDir = oPos - aim.obj;
         Vector3 rot = Vector3.RotateTowards(tr.forward, dir, rotSpeed * Time.deltaTime,0);

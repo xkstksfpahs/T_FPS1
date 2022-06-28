@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6CC92EE2-C97E-2137-C111-F092707B90B5}</ProjectGuid>
+    <ProjectGuid>{78CA881C-AEB1-68A1-C8AD-08A53AEA783A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -140,6 +140,7 @@
     <Compile Include="Assets\SliderText.cs" />
     <Compile Include="Assets\SpawnManager.cs" />
     <Compile Include="Assets\Spawner.cs" />
+    <Compile Include="Assets\TestScript.cs" />
     <Compile Include="Assets\TextComponent.cs" />
     <Compile Include="Assets\TitleCS.cs" />
     <Compile Include="Assets\TitleComponent.cs" />
@@ -727,31 +728,31 @@
       <HintPath>D:/xkstksfpahs/Unity/Hub/Editor/2019.4.18f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/xkstksfpahs/FPS/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/FileHistory/heis2/DESKTOP-C4DJJAD/Data/C/Users/heis2/OneDrive/바탕 화면/T_FPS/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
