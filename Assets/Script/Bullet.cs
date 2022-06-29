@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public int dmg = 1;
     Player pl;
     Rigidbody rb;
-    float sspeed = 2f,startspeed = 200, TSpeed = 50f;
+    float sspeed = 20f,startspeed = 300, TSpeed = 100f;
 
     private float dis, speed, waitTime;
     public Transform targetTr;
@@ -19,17 +19,19 @@ public class Bullet : MonoBehaviour
     public float ballVelocity;
     Aim aim;
     float ox, oy, oz;
+
+    bool isS = false, isT = false;
     void Start()
     {
         pl = GameObject.Find("Player").GetComponent<Player>();
         aim = pl.GetComponentInChildren<Aim>();
-        dmg += pl.dmg;
+        dmg = pl.dmg;
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
-        //rb.AddForce(transform.forward * startspeed);
-        Vector3 dir = new Vector3(aim.dx, aim.dy, aim.dz);
-        dir = dir.normalized;
-        rb.velocity = dir * startspeed;
+        rb.AddForce(transform.forward * startspeed);
+        //Vector3 dir = new Vector3(aim.dx, aim.dy, aim.dz);
+        //dir = dir.normalized;
+        //rb.velocity = dir * startspeed;
     }
 
     // Update is called once per frame
@@ -38,9 +40,15 @@ public class Bullet : MonoBehaviour
         if (!GameSet.gms.gameStart || GameSet.gms.esc || GameSet.gms.gameOver) return;
         //HeadRot();
         Destroy(gameObject, 5f);
+
+        if (isS && !isT)
+        {
+            rb.AddForce(transform.forward * 0);
+            isT = true;
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (target == null)
         {
@@ -49,6 +57,7 @@ public class Bullet : MonoBehaviour
                 target = other.gameObject;
                 Tracking(other.gameObject);
                 Debug.Log(target);
+                isS = true;
             }
         }
     }

@@ -34,7 +34,7 @@ public class ARShoot : MonoBehaviour
         }
     }
 
-    void Flash()
+    public void Flash()
     {
         GameObject flash;
         flash = Instantiate(muzzleFlashBang, firePos.transform.position, firePos.transform.rotation);
