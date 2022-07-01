@@ -125,6 +125,7 @@
     <Compile Include="Assets\MainText.cs" />
     <Compile Include="Assets\MissileComponent.cs" />
     <Compile Include="Assets\OriginBullet.cs" />
+    <Compile Include="Assets\PlaceSearch.cs" />
     <Compile Include="Assets\SGShoot.cs" />
     <Compile Include="Assets\SRShoot.cs" />
     <Compile Include="Assets\Script\Box.cs" />
