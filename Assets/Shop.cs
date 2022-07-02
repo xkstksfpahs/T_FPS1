@@ -153,12 +153,14 @@ public class Shop : MonoBehaviour
                     pl.point -= turretPoint;
                     turretPoint += 30;
                     turret1.GetComponent<turretComponent>().buyItem = true;
+                    turret1.GetComponent<turretComponent>().SetTurret();
                     onTurret++;
                 }
                 else if (onTurret == 1)
                 {
                     pl.point -= turretPoint;
                     turret2.GetComponent<turretComponent>().buyItem = true;
+                    turret2.GetComponent<turretComponent>().SetTurret();
                     onTurret++;
                     turretPoint = 9999;
                 }

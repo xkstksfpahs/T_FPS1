@@ -16,13 +16,16 @@ public class turretComponent : MonoBehaviour
     weaponFire wf;
 
     AudioSource gunSound;
-    public AudioClip gunClip;
+    public AudioClip gunClip,turretOnClip;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         head = transform.GetChild(0).transform;
         gunSound = GetComponent<AudioSource>();
         wf = GameObject.Find("Player").GetComponentInChildren<weaponFire>();
+        anim = GetComponent<Animator>();
+        anim.SetTrigger("Ready");
     }
 
     // Update is called once per frame
@@ -98,5 +101,11 @@ public class turretComponent : MonoBehaviour
             firstTime = 0;
             gunSound.PlayOneShot(gunClip);
         }
+    }
+
+    public void SetTurret()
+    {
+        anim.SetTrigger("TurretOn");
+        gunSound.PlayOneShot(turretOnClip);
     }
 }
