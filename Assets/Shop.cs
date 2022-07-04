@@ -16,6 +16,8 @@ public class Shop : MonoBehaviour
     public GameObject turret1,turret2;
     public GameObject TB;
     int onTurret = 0;
+    [SerializeField] GameObject[] turrets;
+    GameObject turretMain;
 
     weaponFire wf;
     public TextMesh pointText;
@@ -41,14 +43,23 @@ public class Shop : MonoBehaviour
         else if (shopCount == 1)
             isShotspeedShop = true;
         else if (shopCount == 2)
+        {
             isTurretShop = true;
+
+            turretMain = GameObject.Find("Turrets");
+            Debug.Log(turretMain.transform.childCount);
+            for (int i = 0; i < turretMain.transform.childCount; i++)
+            {
+                turrets[i] = turretMain.GetComponent<turretMain>().turret[i];
+                Debug.Log(turrets[i]);
+            }
+        }
         else if (shopCount == 3)
             isTurretDmgShop = true;
         else if (shopCount == 4)
             isTurretSSShop = true;
         else if (shopCount == 5)
             isMissileShop = true;
-
     }
 
     // Update is called once per frame
@@ -73,9 +84,9 @@ public class Shop : MonoBehaviour
             }
             else if (isTurretShop)
             {
-                if (onTurret < 2)
+                if (onTurret < turrets.Length)
                     pointText.text = "터렛\nPoint = " + turretPoint.ToString();
-                else if (onTurret >= 2)
+                else if (onTurret >= turrets.Length)
                     pointText.text = "터렛\n최대치";
             }
             else if (isTurretDmgShop)
@@ -144,33 +155,28 @@ public class Shop : MonoBehaviour
         }
         else if (isTurretShop)
         {
-            if (pl.point >= turretPoint && onTurret < 2)
+            if (pl.point >= turretPoint && onTurret < turrets.Length)
             {
                 ttc.isTT = true;
                 ttc.toolNum = 1;
-                if (onTurret == 0)
+
+                pl.point -= turretPoint;
+                turretPoint += 30;
+                turrets[onTurret].GetComponent<turretComponent>().buyItem = true;
+                turrets[onTurret].GetComponent<turretComponent>().SetTurret();
+                onTurret++;
+
+                if (onTurret == turrets.Length)
                 {
-                    pl.point -= turretPoint;
-                    turretPoint += 30;
-                    turret1.GetComponent<turretComponent>().buyItem = true;
-                    turret1.GetComponent<turretComponent>().SetTurret();
-                    onTurret++;
-                }
-                else if (onTurret == 1)
-                {
-                    pl.point -= turretPoint;
-                    turret2.GetComponent<turretComponent>().buyItem = true;
-                    turret2.GetComponent<turretComponent>().SetTurret();
-                    onTurret++;
                     turretPoint = 9999;
                 }
             }
-            else if(onTurret >=2)
+            else if(onTurret >= turrets.Length)
             {
                 mainText.text = "터렛이 최대치입니다";
                 mainText.color = new Color(mainText.color.r, mainText.color.g, mainText.color.b, 1);
             }
-            else if(pl.point < turretPoint && onTurret < 2)
+            else if(pl.point < turretPoint && onTurret < turrets.Length)
             {
                 mainText.text = "포인트가 부족합니다";
                 mainText.color = new Color(mainText.color.r, mainText.color.g, mainText.color.b, 1);

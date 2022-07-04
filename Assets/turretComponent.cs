@@ -12,6 +12,8 @@ public class turretComponent : MonoBehaviour
     float time = 0, firstTime=0;
     public float atkRate = 0.8f;
     public bool buyItem = false;
+    bool canFire = false;
+    float startFireCount = 3;
 
     weaponFire wf;
 
@@ -34,6 +36,8 @@ public class turretComponent : MonoBehaviour
         if (!GameSet.gms.gameStart || GameSet.gms.esc || GameSet.gms.gameOver || GameSet.gms.tools) return;
         gunSound.volume = wf.gunAudio.value;
         if (buyItem)
+            StartCoroutine(FireStart());
+        if (buyItem && canFire)
         {
             time += Time.deltaTime;
             HeadRot();
@@ -107,5 +111,11 @@ public class turretComponent : MonoBehaviour
     {
         anim.SetTrigger("TurretOn");
         gunSound.PlayOneShot(turretOnClip);
+    }
+
+    IEnumerator FireStart()
+    {
+        yield return new WaitForSeconds(3);
+        canFire = true;
     }
 }

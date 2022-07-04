@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         sm = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         shopTr = GameObject.Find("Shop").GetComponentsInChildren<Transform>();
+        roundTime = 3;
     }
 
     // Update is called once per frame

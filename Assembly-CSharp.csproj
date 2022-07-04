@@ -151,6 +151,7 @@
     <Compile Include="Assets\toolTipComponent.cs" />
     <Compile Include="Assets\turretBullet.cs" />
     <Compile Include="Assets\turretComponent.cs" />
+    <Compile Include="Assets\turretMain.cs" />
     <None Include="Assets\DP\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\DP\Particle Dissolve Shader by Moonflower Carnivore\Shaders\legacy\DissolveSoft_Alpha_Additive_softrim.shader" />
     <None Include="Assets\DP\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

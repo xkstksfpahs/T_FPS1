@@ -123,6 +123,11 @@ MonoBehaviour:
   turret1: {fileID: 0}
   turret2: {fileID: 0}
   TB: {fileID: 6983308597520941653, guid: e02678d9f7cbf6947880789815d3553e, type: 3}
+  turrets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pointText: {fileID: 1466973865917611849}
   gunsLevel: 1
   mainText: {fileID: 0}
