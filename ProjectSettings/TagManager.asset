@@ -12,6 +12,7 @@ TagManager:
   - WayPointGroup
   - Turret
   - Spawner
+  - Range
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Player
   - Turret
   - Spawner
-  - 
+  - Range
   - 
   - 
   - 

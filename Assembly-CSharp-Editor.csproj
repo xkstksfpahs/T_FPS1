@@ -64,8 +64,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DP\Bitgem\StylisedWater\URP\Scripts\Bitgem\Editor\FlagEnumAttributeDrawer.cs" />
     <Compile Include="Assets\DP\Particle Dissolve Shader by Moonflower Carnivore\Shaders\unity5\Editor\CustomMaterialEditor.cs" />
     <Compile Include="Assets\DP\Particle Dissolve Shader by Moonflower Carnivore\Shaders\unity5\Editor\Shader_softrim_dissolve.cs" />
+    <Compile Include="Assets\Pixel Map Terrain\Scripts\Editor\CreateTextAsset.cs" />
+    <Compile Include="Assets\Pixel Map Terrain\Scripts\Editor\PixelMapTerrainEditor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/xkstksfpahs/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
