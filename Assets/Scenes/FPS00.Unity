@@ -17815,7 +17815,7 @@ PrefabInstance:
     - target: {fileID: 8356554158312183909, guid: 3397ec53edb5dae4799613fdbd812ee6,
         type: 3}
       propertyPath: life
-      value: 1000
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8356554158312183909, guid: 3397ec53edb5dae4799613fdbd812ee6,
         type: 3}
@@ -17830,7 +17830,7 @@ PrefabInstance:
     - target: {fileID: 8356554158312183909, guid: 3397ec53edb5dae4799613fdbd812ee6,
         type: 3}
       propertyPath: killPoint
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8356554158312183909, guid: 3397ec53edb5dae4799613fdbd812ee6,
         type: 3}
