@@ -27,7 +27,7 @@ public class Shop : MonoBehaviour
     GunsTip gt;
 
     public int gunsLevel = 1;
-    public Text mainText;
+    Text mainText;
     public GameObject TextGameObject;
     float textSpawnTime = 2.5f;
     void Start()
@@ -37,6 +37,7 @@ public class Shop : MonoBehaviour
         lc = GameObject.Find("Player").GetComponentInChildren<LauncherComponent>();
         ttc = GameObject.Find("ToolTipUI").GetComponent<toolTipComponent>();
         gt = GameObject.Find("GunsTip").GetComponent<GunsTip>();
+        mainText = GameObject.Find("MainText").GetComponent<Text>();
         TextGameObject.SetActive(false);
         if (shopCount == 0)
             isDmgShop = true;
@@ -47,11 +48,9 @@ public class Shop : MonoBehaviour
             isTurretShop = true;
 
             turretMain = GameObject.Find("Turrets");
-            Debug.Log(turretMain.transform.childCount);
             for (int i = 0; i < turretMain.transform.childCount; i++)
             {
                 turrets[i] = turretMain.GetComponent<turretMain>().turret[i];
-                Debug.Log(turrets[i]);
             }
         }
         else if (shopCount == 3)
@@ -166,10 +165,10 @@ public class Shop : MonoBehaviour
                 turrets[onTurret].GetComponent<turretComponent>().SetTurret();
                 onTurret++;
 
-                if (onTurret == turrets.Length)
-                {
-                    turretPoint = 9999;
-                }
+                //if (onTurret == turrets.Length)
+                //{
+                //    turretPoint = 9999;
+                //}
             }
             else if(onTurret >= turrets.Length)
             {

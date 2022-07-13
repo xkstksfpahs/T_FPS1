@@ -39,7 +39,11 @@ public class Box : MonoBehaviour
         ttc = GameObject.Find("ToolTipUI").GetComponent<toolTipComponent>();
         if (!isBoss)
         {
-            if (g >= 80)
+            if(gm.round == 1)
+            {
+                hp = 1;
+            }
+            else if (g >= 80 && gm.round > 1)
             {
                 boxType = false;
                 hp = Random.Range(1, 4);
@@ -47,7 +51,7 @@ public class Box : MonoBehaviour
             else
             {
                 boxType = true;
-                hp = gm.round + Random.Range(0, 3);
+                hp = gm.round + Random.Range(0, 3) -1;
             }
             sm.count++;
         }
