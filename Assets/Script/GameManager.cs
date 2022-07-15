@@ -17,12 +17,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] shops;
     Transform[] shopTr;
     public bool isBuy = false;
+    toolTipComponent ttc;
     // Start is called before the first frame update
     void Start()
     {
         sm = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         shopTr = GameObject.Find("Shop").GetComponentsInChildren<Transform>();
         roundTime = 20;
+        ttc = GameObject.Find("ToolTipUI").GetComponent<toolTipComponent>();
     }
 
     // Update is called once per frame
@@ -80,6 +82,8 @@ public class GameManager : MonoBehaviour
             go.transform.position = shopTr[i+1].transform.position;
             go.transform.rotation = shopTr[i+1].transform.rotation;
         }
+        ttc.isTT = true;
+        ttc.toolNum = 6;
         shopSp = false;
     }
 }

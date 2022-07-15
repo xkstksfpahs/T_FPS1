@@ -56,7 +56,15 @@ public class Shop : MonoBehaviour
         else if (shopCount == 3)
             isTurretDmgShop = true;
         else if (shopCount == 4)
+        {
             isTurretSSShop = true;
+
+            turretMain = GameObject.Find("Turrets");
+            for (int i = 0; i < turretMain.transform.childCount; i++)
+            {
+                turrets[i] = turretMain.GetComponent<turretMain>().turret[i];
+            }
+        }
         else if (shopCount == 5)
             isMissileShop = true;
     }
@@ -200,8 +208,10 @@ public class Shop : MonoBehaviour
             if(pl.point >= turretSSPoint)
             {
                 pl.point -= turretSSPoint;
-                turret1.GetComponent<turretComponent>().atkRate *= 0.9f;
-                turret2.GetComponent<turretComponent>().atkRate *= 0.9f;
+                for (int i = 0; i < turrets.Length; i++)
+                {
+                    turrets[i].GetComponent<turretComponent>().atkRate *= 0.9f;
+                }
                 turretSSPoint += 30;
             }
             else

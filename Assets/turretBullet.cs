@@ -6,7 +6,7 @@ public class turretBullet : MonoBehaviour
 {
     public int dmg = 1;
     Rigidbody rb;
-    float speed = 1500;
+    float speed = 2000;
     // Start is called before the first frame update
     void Start()
     {
