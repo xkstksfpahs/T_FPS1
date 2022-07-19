@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     Transform[] shopTr;
     public bool isBuy = false;
     toolTipComponent ttc;
+    TimeTextComponent timeCom;
+    bool three = false, two = false, one = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
         shopTr = GameObject.Find("Shop").GetComponentsInChildren<Transform>();
         roundTime = 20;
         ttc = GameObject.Find("ToolTipUI").GetComponent<toolTipComponent>();
+        timeCom = GameObject.Find("TimeText").GetComponent<TimeTextComponent>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,22 @@ public class GameManager : MonoBehaviour
         if(isRound == true)
         {
             roundTime -= Time.deltaTime;
+
+            if (roundTime <= 3 && three == false)
+            {
+                timeCom.SetColor(1);
+                three = true;
+            }
+            else if (roundTime <= 2 && two == false)
+            {
+                timeCom.SetColor(1);
+                two = true;
+            }
+            else if (roundTime <= 1 && one == false)
+            {
+                timeCom.SetColor(1);
+                one = true;
+            }
             RoundTime();
             isBuy = false;
         }
@@ -50,6 +69,12 @@ public class GameManager : MonoBehaviour
     {
         shopTime -= Time.deltaTime;
         timeText.text = "Shopping"+"\n"+shopTime.ToString("F1");
+        if (shopTime == 3)
+            timeCom.SetColor(2);
+        else if (shopTime == 2)
+            timeCom.SetColor(2);
+        else if (shopTime == 1)
+            timeCom.SetColor(2);
         if (shopSp)
             SpawnShop();
         if (shopTime <= 0)
@@ -65,10 +90,6 @@ public class GameManager : MonoBehaviour
     public void RoundTime()
     {
         timeText.text = "Round : "+round.ToString() +"\n"+roundTime.ToString("F1");
-        //for (int i = 0; i < shops.Length; i++)
-        //{
-        //    shops[i].GetComponent<Shop>().isBuy = false;
-        //}
         shopSp = true;
     }
 
