@@ -38,18 +38,18 @@ public class GameManager : MonoBehaviour
         if(isRound == true)
         {
             roundTime -= Time.deltaTime;
-
-            if (roundTime <= 3 && three == false)
+            timeCom.isround = true;
+            if (roundTime <= 4 && three == false)
             {
                 timeCom.SetColor(1);
                 three = true;
             }
-            else if (roundTime <= 2 && two == false)
+            else if (roundTime <= 3 && two == false)
             {
                 timeCom.SetColor(1);
                 two = true;
             }
-            else if (roundTime <= 1 && one == false)
+            else if (roundTime <= 2 && one == false)
             {
                 timeCom.SetColor(1);
                 one = true;
@@ -69,12 +69,22 @@ public class GameManager : MonoBehaviour
     {
         shopTime -= Time.deltaTime;
         timeText.text = "Shopping"+"\n"+shopTime.ToString("F1");
-        if (shopTime == 3)
+        timeCom.isround = false;
+        if (shopTime <= 4 && three == true)
+        {
             timeCom.SetColor(2);
-        else if (shopTime == 2)
+            three = false;
+        }
+        else if (shopTime <= 3 && two == true)
+        {
             timeCom.SetColor(2);
-        else if (shopTime == 1)
+            two = false;
+        }
+        else if (shopTime <= 2 && one == true)
+        {
             timeCom.SetColor(2);
+            one = false;
+        }
         if (shopSp)
             SpawnShop();
         if (shopTime <= 0)

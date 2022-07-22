@@ -7,29 +7,35 @@ public class TimeTextComponent : MonoBehaviour
 {
     Text text;
     float baseColor = 0.1960f;
+    public bool isround = false;
+    AudioSource adS;
+    public AudioClip roundEndSound, shopEndSound;
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
+        adS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        textColorGreen();
-        textColorRed();
-        if (Input.GetMouseButtonDown(0))
-        {
-            SetColor(1);
-        }
+        if (isround == true)
+            textColorGreen();
+        else if (isround == false)
+            textColorRed();
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    SetColor(1);
+        //}
     }
 
 
     void textColorGreen()
     {
         if (text.color.g > baseColor)
-            text.color = new Color(baseColor, text.color.g - (Time.deltaTime/50), baseColor);
-        else if(text.color.g <= baseColor)
+            text.color = new Color(baseColor, text.color.g - Time.deltaTime, baseColor);
+        else if (text.color.g <= baseColor)
             text.color = new Color(baseColor, baseColor, baseColor);
     }
 
@@ -37,7 +43,7 @@ public class TimeTextComponent : MonoBehaviour
     {
         if (text.color.r > baseColor)
             text.color = new Color(text.color.r - Time.deltaTime, baseColor, baseColor);
-        else
+        else if (text.color.r <= baseColor)
             text.color = new Color(baseColor, baseColor, baseColor);
     }
 
@@ -46,10 +52,12 @@ public class TimeTextComponent : MonoBehaviour
         if (num == 1)
         {
             text.color = new Color(baseColor, 1, baseColor);
+            adS.PlayOneShot(roundEndSound);
         }
         else if(num == 2)
         {
             text.color = new Color(1, baseColor, baseColor);
+            adS.PlayOneShot(shopEndSound);
         }
     }
 }
