@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public Image bloodS;
     ShakeCamera shake;
     toolTipComponent ttc;
+    AudioSource ads;
+    public AudioClip dmgAC;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
         wf = GetComponentInChildren<weaponFire>();
         shake = GetComponentInChildren<ShakeCamera>();
         ttc = GameObject.Find("ToolTipUI").GetComponent<toolTipComponent>();
+        ads = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
             ttc.isTT = true;
             ttc.toolNum = 5;
         }
+        ads.volume = PlayerPrefs.GetFloat("Save_Sound");
     }
     void Text()
     {
@@ -55,6 +59,7 @@ public class Player : MonoBehaviour
         if (lifeTime <= 0)
         {
             life--;
+            ads.PlayOneShot(dmgAC);
             StartCoroutine(ShowBloodScreen());
             //StartCoroutine(shake.ShakeCameras());
             lifeTime = 2f;

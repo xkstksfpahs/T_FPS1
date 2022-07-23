@@ -76,7 +76,7 @@ public class Box : MonoBehaviour
 
     void Update()
     {
-        //boxSound.volume = wf.gunAudio.value;
+        boxSound.volume = PlayerPrefs.GetFloat("Save_Sound");
         Text();
         MatColor();
     }

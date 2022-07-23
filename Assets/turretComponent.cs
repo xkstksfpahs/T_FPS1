@@ -34,7 +34,7 @@ public class turretComponent : MonoBehaviour
     void Update()
     {
         if (!GameSet.gms.gameStart || GameSet.gms.esc || GameSet.gms.gameOver || GameSet.gms.tools) return;
-        gunSound.volume = wf.gunAudio.value;
+        gunSound.volume = PlayerPrefs.GetFloat("Save_Sound");
         if (buyItem)
             StartCoroutine(FireStart());
         if (buyItem && canFire)

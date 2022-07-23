@@ -30,7 +30,7 @@ public class SGShoot : MonoBehaviour
             if(wf.istracking == false)
             GunAnimator.SetTrigger("Fire");
             Flash();
-            //gunPlayer.volume = wf.gunAudio.value;
+            gunPlayer.volume = PlayerPrefs.GetFloat("Save_Sound");
             wf.gunPlayer.PlayOneShot(shoot);
             wf.gunPlayer.PlayOneShot(pump);
             isFire = false;

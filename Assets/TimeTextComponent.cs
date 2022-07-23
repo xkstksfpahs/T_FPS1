@@ -24,6 +24,7 @@ public class TimeTextComponent : MonoBehaviour
             textColorGreen();
         else if (isround == false)
             textColorRed();
+        adS.volume = PlayerPrefs.GetFloat("Save_Sound");
         //if (Input.GetMouseButtonDown(0))
         //{
         //    SetColor(1);

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     toolTipComponent ttc;
     TimeTextComponent timeCom;
     bool three = false, two = false, one = false;
+    AudioSource ads;
+    public AudioClip startAC;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
         roundTime = 20;
         ttc = GameObject.Find("ToolTipUI").GetComponent<toolTipComponent>();
         timeCom = GameObject.Find("TimeText").GetComponent<TimeTextComponent>();
+        ads = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,6 +97,7 @@ public class GameManager : MonoBehaviour
             shopTime = 30f;
             round++;
             sm.bossSpawn = true;
+            ads.PlayOneShot(startAC);
         }
     }
 

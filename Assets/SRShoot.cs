@@ -34,6 +34,8 @@ public class SRShoot : MonoBehaviour
             gunAnim.SetTrigger("Reload");
             isReload = false;
         }
+
+        gunPlayer.volume = PlayerPrefs.GetFloat("Save_Sound");
     }
 
     void flash()
