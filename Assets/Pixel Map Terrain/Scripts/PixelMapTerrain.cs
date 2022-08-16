@@ -216,7 +216,7 @@ public class PixelMapTerrain : MonoBehaviour {
 		{
 			TextureImporter tempImporter = TextureImporter.GetAtPath( AssetDatabase.GetAssetPath( (Texture2D)img) ) as TextureImporter;
 			tempImporter.isReadable = true;
-			tempImporter.textureType = TextureImporterType.Advanced;
+			tempImporter.textureType = TextureImporterType.Default;
 			tempImporter.mipmapEnabled = false;
 			tempImporter.filterMode = FilterMode.Point;
 			tempImporter.textureFormat = TextureImporterFormat.ARGB32;

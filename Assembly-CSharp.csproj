@@ -140,6 +140,7 @@
     <Compile Include="Assets\Script\Bullet.cs" />
     <Compile Include="Assets\Script\CameraRot.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\LoadingSceneScript.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Script\weaponFire.cs" />
@@ -156,6 +157,13 @@
     <Compile Include="Assets\TitleComponent.cs" />
     <Compile Include="Assets\TitleGameSet.cs" />
     <Compile Include="Assets\WayPointMove.cs" />
+    <Compile Include="Assets\loadingBar\scripts\Loading.cs" />
+    <Compile Include="Assets\loadingBar\scripts\SimpleLoading.cs" />
+    <Compile Include="Assets\loadingBar\scripts\loadingbar.cs" />
+    <Compile Include="Assets\loadingBar\scripts\loadingcolorful.cs" />
+    <Compile Include="Assets\loadingBar\scripts\loadingtext.cs" />
+    <Compile Include="Assets\loadingBar\scripts\rotatetotate.cs" />
+    <Compile Include="Assets\loadingBar\scripts\simplerotate.cs" />
     <Compile Include="Assets\shopText.cs" />
     <Compile Include="Assets\toolTipComponent.cs" />
     <Compile Include="Assets\turretBullet.cs" />

@@ -130,7 +130,6 @@ MonoBehaviour:
   - {fileID: 0}
   pointText: {fileID: 1466973865917611849}
   gunsLevel: 1
-  mainText: {fileID: 0}
   TextGameObject: {fileID: 1466973865917611852}
 --- !u!54 &6942410510202331480
 Rigidbody:
@@ -267,7 +266,7 @@ TextMesh:
   m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 130
+  m_FontSize: 160
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}

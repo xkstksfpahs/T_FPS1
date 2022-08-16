@@ -115,12 +115,14 @@ public class GameSet : MonoBehaviour
 
     public void ReStart()
     {
-        SceneManager.LoadScene("FPS00");
+        //SceneManager.LoadScene("FPS00");
+        LoadingSceneScript.LoadScene("FPS00");
     }
 
     public void Exit()
     {
-        SceneManager.LoadScene("Title");
+        //SceneManager.LoadScene("Title");
+        LoadingSceneScript.LoadScene("Title");
     }
     public void ESCMenu()
     {
